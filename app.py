@@ -21,10 +21,13 @@ client = genai.Client(
 MODELS = ["gemini-3.8-flash", "gemini-3.6-flash", "gemini-3.5-flash-lite", "gemini-3.1-flash-lite"]
 
 PROMPT = (
-    "Transcribe all handwriting in this image exactly as written. "
-    "Keep the original line breaks. Do not correct spelling or grammar. "
-    "Mark any word you cannot read as [?]. "
-    "Output only the transcription, with no commentary."
+    'Transcribe all handwriting in this image exactly as written, keeping the original line breaks. '
+    'Do not correct spelling, grammar, or math mistakes. '
+    'Write math in plain readable text, NOT LaTeX: use ^ for powers (x^2), / for fractions (1760/x^3), '
+    'write combinations like 12C9, and use Unicode symbols like × ÷ √ π. '
+    'No dollar signs and no backslash commands. '
+    'Mark any word or symbol you cannot read as [?]. '
+    'Output only the transcription, with no commentary.'
 )
 
 LANGUAGES = ["Auto-detect", "English", "Hindi", "Marathi", "Gujarati",
